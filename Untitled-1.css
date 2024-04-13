@@ -1,89 +1,108 @@
-* {
+*{
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
+.main {
+  width: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%,), url(1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 109vh;
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
+.icon{
+  width: 200px;
+  float: left;
+  height: 70px;
+}
+
+.logo{
+  color: darkorange;
+  font-size: 35px;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-left: 20px;
+  float: left;
+  padding-top: 10px;
+}
+
+.menu{
+  width: 400px;
+  float: left;
+  height: 70px;
+}
+
+.menu1{
+  width: 400px;
+  float: left;
+  height: 70px;
+}
+
+ul{
+  float: left;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
-header nav ul {
+ul li{
   list-style: none;
-  display: flex;
+  margin-left: 62px;
+  margin-top: 27px;
+  font-size: 14px;
 }
 
-header nav ul li {
-  margin-right: 20px;
-}
-
-header nav ul li a {
+ul li a{
   text-decoration: none;
-  color: #fff;
+  color:black ;
+  font-family: Arial;
+  font-weight: bold;
+  transition: o.4s ease-in-out;
 }
 
-.hero {
-  text-align: center;
-  padding: 100px 0;
-  background-color: #f4f4f4;
+ul li a:hover{
+  color: darkorange;
 }
 
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.search{
+  width:430px ;
+  float: left;
+  margin-left: 270px;
+
 }
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.srch{
+  font-family: 'Times New Roman';
+  width: 230px;
+  height: 40 px;
+  background: fixed;
+  border: 1px solid black;
+  margin-top: 13px;
+  color: black;
+  border-right: none;
+  font-size: 16px;
+  float: left;
+  padding: 10px;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
-.btn {
-  display: inline-block;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
+.btn{
+  width: 100px;
+  height: 40px;
+  background: darkorange;
+  border: 2px solid darkorange ;
+  margin-top: 13px;
+  color: black;
+  font-size: 15px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
-.btn:hover {
-  background-color: #555;
+.btn:focus{
+  outline: none;
 }
 
-.products {
-  text-align: center;
-  padding: 50px 0;
-}
-
-.product {
-  display: inline-block;
-  margin: 0 20px;
-  text-align: center;
-}
-
-.product img {
-  width: 200px;
-  height: 200px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-}
-
-.product h3 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
-}
-
-.product p {
-  font-size: 1rem;
-  color: #666;
+.srch:focus{
+  outline: none;
 }
