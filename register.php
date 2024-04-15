@@ -7,10 +7,10 @@ $phonenumber = $_POST['phonenumber'];
 // Connect to MySQL database
 $servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
 $username = "Etech321";
-$password = "3DNFCBLhrdREVn4VIx4V";
+$DB_password = "3DNFCBLhrdREVn4VIx4V";
 $dbname = "myDB";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $DB_password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
