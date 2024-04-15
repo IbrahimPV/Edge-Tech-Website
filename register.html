@@ -8,9 +8,9 @@
     <title>Registration Page</title>
     <script>
         function validateForm() {
-            var username = document.getElementById("username").value;
             var email = document.getElementById("email").value;
             var password = document.getElementById("password").value
+            var phonenumber = document.getElementById("phonenumber").value
 
             if (username === '' || email === '' || password === '' || confirmPassword === '') {
                 alert("All fields are required");
@@ -22,7 +22,7 @@
 </head>
 <body>
     <div class="main">
-        <form action="register.php" method="post" onsubmit="return validateForm()">
+        <form action="register.php" method="post">
             <h1>Registration</h1>
     
             <div class="textbox">
