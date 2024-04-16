@@ -1,44 +1,57 @@
 <?php
-// Retrieve form data
+$name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $phonenumber = $_POST['phonenumber'];
 
-// Connect to MySQL database
-$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com:3306";
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
 $username = "Etech321";
-$db_password = "3DNFCBLhrdREVn4VIx4W"; // Changed variable name to avoid conflict
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
 $dbname = "myDB";
 
 $conn = new mysqli($servername, $username, $db_password, $dbname);
 
-// Check connection
+
 if ($conn->connect_error) {
-    die("Connection faileeeed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
-// Check if email already exists using prepared statement
-$sql_select = "SELECT * FROM users WHERE email=?";
-$stmt_select = $conn->prepare($sql_select);
-$stmt_select->bind_param("s", $email);
-$stmt_select->execute();
-$result = $stmt_select->get_result();
+$isRecordCreated = false;
 
-if ($result->num_rows > 0) {
-    // Email already exists
-    echo "Email already exists";
-} else {
-    // Insert into database using prepared statement
-    $sql_insert = "INSERT INTO users (email, password, phonenumber) VALUES (?, ?, ?)";
-    $stmt_insert = $conn->prepare($sql_insert);
-    $stmt_insert->bind_param("sss", $email, $password, $phonenumber);
+while (!$isRecordCreated) {
 
-    if ($stmt_insert->execute()) {
-        echo "New record created successfully";
+    $sql_select = "SELECT * FROM users WHERE email=?";
+    $stmt_select = $conn->prepare($sql_select);
+    $stmt_select->bind_param("s", $email);
+    $stmt_select->execute();
+    $result = $stmt_select->get_result();
+
+    if ($result->num_rows > 0) {
+        echo "<script>alert('Email already exists'); window.history.back();</script>";
+        $stmt_select->close();
+        break; 
     } else {
-        echo "Error: " . $stmt_insert->error;
+
+        $sql_insert = "INSERT INTO users (name, email, password, phonenumber) VALUES (?, ?, ?, ?)";
+        $stmt_insert = $conn->prepare($sql_insert);
+        $stmt_insert->bind_param("ssss", $name, $email, $password, $phonenumber);
+
+        if ($stmt_insert->execute()) {
+            echo "New record created successfully";
+            $isRecordCreated = true; 
+            echo "Error: " . $stmt_insert->error;
+            break; 
+        }
     }
 }
+
+if ($isRecordCreated) {
+
+    header("Location: login.html");
+    exit(); 
+}
+
 
 $stmt_select->close();
 $stmt_insert->close();
