@@ -5,7 +5,7 @@ $password = $_POST['password'];
 $phonenumber = $_POST['phonenumber'];
 
 // Connect to MySQL database
-$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com:3306";
 $username = "Etech321";
 $db_password = "3DNFCBLhrdREVn4VIx4W"; // Changed variable name to avoid conflict
 $dbname = "myDB";
@@ -14,7 +14,7 @@ $conn = new mysqli($servername, $username, $db_password, $dbname);
 
 // Check connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Connection faileeeed: " . $conn->connect_error);
 }
 
 // Check if email already exists using prepared statement
