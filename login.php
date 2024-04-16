@@ -25,7 +25,7 @@ $result = $stmt_select->get_result();
 
 if ($result->num_rows == 1) {
 
-    header("Location: dashboard.html");
+    header("Location: structer.html");
     exit();
 } else {
  
