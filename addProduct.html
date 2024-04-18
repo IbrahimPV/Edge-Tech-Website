@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <section id="upload_container">
+        <h1>Add Product</h1>
+        <form action="addProduct.php" method="POST" enctype="multipart/form-data" >
+            <h1>Add Product</h1>
+            <input type="text" name="productname" id="productname" placeholder="Product Name" required>
+            <div class="desc">
+                <input type="text" name="description" id="description" placeholder="Description" >
+            </div>
+            <select>
+                <option>Select a category</option>
+                <option>category 1</option>
+                <option>category 2</option>
+                <option>category 3</option>
+              </select>
+              <input type="number" name="price" id="price" placeholder="Product Price" required>
+              <input type="text" name="tags" id="tags" placeholder="Tags" required>
+            <input type="file" name="imageUpload" id="imageUpload" required hidden>
+            <button id="choose" onclick="upload();">Choose Image</button>
+            <input type="submit" value="Upload" name="submit">
+        </form>
+
+        <button onclick="goBack()">Back</button> 
+    </section>
+
+    <script>
+        var productname = document.getElementById("productname");
+        var price = document.getElementById("price");
+        var discount = document.getElementById("discount");
+        var choose = document.getElementById("choose");
+        var uploadImage = document.getElementById("imageUpload");
+
+        function upload(){
+            uploadImage.click();
+        }
+
+        uploadImage.addEventListener("change",function(){
+            var file = this.files[0];
+            if(productname.value == ""){
+                productname.value = file.name;
+            }
+            choose.innerHTML = "You can change("+file.name+") picture";
+        })
+    </script>
+</body>
+</html>
