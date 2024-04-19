@@ -16,7 +16,10 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+if ($email =="admin" and $password="password"){
+    header("Location: adminPanel.html");
 
+}
 $sql_select = "SELECT * FROM users WHERE email=? AND password=?";
 $stmt_select = $conn->prepare($sql_select);
 $stmt_select->bind_param("ss", $email, $password);
@@ -29,7 +32,7 @@ if ($result->num_rows == 1) {
     exit();
 } else {
  
-    header("Location: login.html?error=1");
+    header("Location: index.html?error=1");
     exit();
 }
 

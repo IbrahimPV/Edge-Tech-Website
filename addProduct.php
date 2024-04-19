@@ -59,7 +59,7 @@ if(isset($_POST["submit"])){
 
         if ($stmt->execute()) {
             echo "New record created successfully"; 
-            echo "Error: " . $stmt->error;
+            header("Location: adminPanel.html");
         }
         if($conn->query($sql) === TRUE){
             echo "<script>alert('your product uploaded successfully')</script>";
