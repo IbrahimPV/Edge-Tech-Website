@@ -1,6 +1,3 @@
-
-
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -73,13 +70,13 @@
 
         <section id="product1" class="section-p1">
 
-        <?php
-          while($row = mysqli_fetch_assoc($all_product)){
-       ?>
-            <div class="container">
+            <?php
+                while($row = mysqli_fetch_assoc($all_product)){
+            ?>
+            <div class="container" style="display:flex; justify-content:space-between;">
             
 
-                    <div class="pro">
+                <div class="pro">
                     <img src="<?php echo $row["image"]; ?>" alt="">
                         <div class="des">
 
@@ -110,12 +107,6 @@
             <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
 
         </section>
-        
-
-        
-
-
-
         <script src="script.js"></script>
     </body>
 
