@@ -141,7 +141,11 @@ h6{
     position: relative;
 
 }
-
+.pro img {
+  width: 100px; /* Adjust the width as needed */
+  height: 350px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
 #product1 .pro img{
     width: 100%;
     border-radius: 20px;
