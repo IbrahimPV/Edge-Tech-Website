@@ -129,24 +129,25 @@ h6{
 }
 
 #product1 .pro{
-    width: 23%;
-    min-width: 250px;
-    padding: 10px 12px;
+    width: calc(25% - 40px); /* Adjusted width */
+    padding: 20px; /* Added padding */
     border: 1px solid #c8a28a;
-    border-radius: 25px;
+    border-radius: 10px; /* Adjusted border radius */
     cursor: pointer;
-    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
-    margin: 15px 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Added margin bottom for spacing */
     transition: 0.2s ease;
-    position: relative;
 
 }
 
+.pro img {
+  width: 100px; /* Adjust the width as needed */
+  height: 350px; /* Adjust the height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the entire container */
+}
 #product1 .pro img{
-  width: 100%;
-  height: 100%; /* Adjust the height as needed */
-  border-radius: 20px;
-  object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
 }
 #product1 .pro:hover{
     box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.6);
