@@ -52,10 +52,11 @@
 </section>
 
 <section id="product1" class="section-p1">
-    <div class="container">
-        <?php
+<?php
             while($row = mysqli_fetch_assoc($all_product)){
         ?>
+    <div class="container">
+
         <div class="pro">
             <img src="<?php echo $row["image"]; ?>" alt="">
             <div class="des">
