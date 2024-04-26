@@ -70,7 +70,7 @@
                 </div>
                 <h4><b>$<?php echo $row["price"]; ?></b></h4>
             </div>
-            <a href="#"><i class="fas fa-shopping-cart cart"></i></a>
+            <button class="add" data-id="<?php echo $row["product_id"];  ?>">Add to cart</button>
         </div>
         <?php
             }
