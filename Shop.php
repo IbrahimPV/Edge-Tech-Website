@@ -48,8 +48,8 @@ if ($result_cart->num_rows > 0) {
     <input class="bar" placeholder="Search?">
     <div>
         <ul id="navbar">
-            <li><a href="structer.html">Home</a></li>
-            <li><a class="active" href="Shop.html">Shop</a></li>
+            <li><a href="structer.php">Home</a></li>
+            <li><a class="active" href="Shop.php">Shop</a></li>
             <li><a href="Account.html">Account</a></li>
             <li><a href="Order.html">Orders</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
@@ -86,7 +86,7 @@ if ($result_cart->num_rows > 0) {
                 </div>
                 <h4><b>$<?php echo $row["price"]; ?></b></h4>
             </div>
-            <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>,<?php echo $cart_id; ?>)">Add to cart</button>
+            <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>, <?php echo $cart_id; ?>)">Add to cart</button>
         </div>
         <?php
             }
@@ -104,7 +104,7 @@ if ($result_cart->num_rows > 0) {
 <script>
     // Function to handle adding product to cart
     function addToCart(product_id,cart_id) {
-        alert(cart_id);
+        alert("Item Has been added to cart");
 
         
         // AJAX request to add product to cart
