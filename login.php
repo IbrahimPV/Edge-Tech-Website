@@ -27,12 +27,14 @@ $stmt_select->execute();
 $result = $stmt_select->get_result();
 
 if ($result->num_rows == 1) {
+    $row = $result->fetch_assoc();
+    $user_id = $row['user_id'];
 
-    header("Location: structer.html");
+    header("Location: structer.php?user_id=$user_id");
     exit();
 } else {
  
-    header("Location: index.html?error=1");
+    header("Location: index.html");
     exit();
 }
 

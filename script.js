@@ -1,3 +1,4 @@
+
 'use strict';
 
 // all initial elements
@@ -86,3 +87,4 @@ const totalCalc = function () {
   payAmountBtn.textContent = total.toFixed(2);
 
 }
+

@@ -38,9 +38,15 @@ while (!$isRecordCreated) {
         $stmt_insert->bind_param("ssss", $name, $email, $password, $phonenumber);
 
         if ($stmt_insert->execute()) {
+            $isRecordCreated = true;
+            $user_id = $stmt_insert->insert_id;
+
+            $sql_insert_cart = "INSERT INTO shoppingCart (user_id) VALUES (?)";
+            $stmt_insert_cart = $conn->prepare($sql_insert_cart);
+            $stmt_insert_cart->bind_param("i", $user_id);
+            $stmt_insert_cart->execute();
+
             echo "New record created successfully";
-            $isRecordCreated = true; 
-            echo "Error: " . $stmt_insert->error;
             break; 
         }
     }
@@ -55,5 +61,6 @@ if ($isRecordCreated) {
 
 $stmt_select->close();
 $stmt_insert->close();
+$stmt_insert_cart->close();
 $conn->close();
 ?>
