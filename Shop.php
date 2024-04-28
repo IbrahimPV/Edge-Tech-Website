@@ -48,22 +48,22 @@ if ($result_cart->num_rows > 0) {
     <input class="bar" placeholder="Search?">
     <div>
         <ul id="navbar">
-            <li><a href="structer.html">Home</a></li>
-            <li><a class="active" href="Shop.html">Shop</a></li>
+            <li><a href="structer.php">Home</a></li>
+            <li><a class="active" href="Shop.php">Shop</a></li>
             <li><a href="Account.html">Account</a></li>
             <li><a href="Order.html">Orders</a></li>
-            <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            <li><a href="cart.php?user_id=<?php echo $user_id; ?>"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </div>
 </section>
 
 <section id="page-header">
     <div class="categ">
-        <button style="cursor: pointer;">Computers & Laptops</button>
-        <button style="cursor: pointer;">Mobile Phones & Tablets</button>
-        <button style="cursor: pointer;">Electronics & Gadgets</button>
-        <button style="cursor: pointer;">Networking & Internet</button>
-        <button style="cursor: pointer;">Components & Accessories</button>
+        <button style="cursor: pointer;">Mouses</button>
+        <button style="cursor: pointer;">Keyboards</button>
+        <button style="cursor: pointer;">Headphones</button>
+        <button style="cursor: pointer;">Microphones</button>
+        <button style="cursor: pointer;">Monitors</button>
     </div>
 </section>
 
@@ -72,6 +72,7 @@ if ($result_cart->num_rows > 0) {
     <div class="container">
         <?php
             while($row = mysqli_fetch_assoc($all_product)){
+                
         ?>
         <div class="pro">
             <img src="<?php echo $row["image"]; ?>" alt="">
@@ -84,9 +85,9 @@ if ($result_cart->num_rows > 0) {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h4><b>$<?php echo $row["price"]; ?></b></h4>
+                <h4><b><?php echo $row["price"]; ?> AED</b></h4>
             </div>
-            <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>,<?php echo $cart_id; ?>)">Add to cart</button>
+            <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>, <?php echo $cart_id; ?>)">Add to cart</button>
         </div>
         <?php
             }
@@ -104,7 +105,7 @@ if ($result_cart->num_rows > 0) {
 <script>
     // Function to handle adding product to cart
     function addToCart(product_id,cart_id) {
-        alert(cart_id);
+        alert("Item Has been added to cart");
 
         
         // AJAX request to add product to cart

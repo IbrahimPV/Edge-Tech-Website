@@ -1,3 +1,43 @@
+
+
+<?php
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $db_password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$user_id = $_GET['user_id'];
+
+
+
+
+
+
+$sql_cart = "SELECT cart_id FROM shoppingCart WHERE user_id = '$user_id'";
+$result_cart = $conn->query($sql_cart);
+if ($result_cart->num_rows > 0) {
+    $row_cart = $result_cart->fetch_assoc();
+    $cart_id = $row_cart['cart_id'];
+} else {
+    echo "Error creating cart: " . $conn->error;
+}
+
+
+
+$sql = "SELECT * FROM cartItems INNER JOIN products ON cartItems.cart_id = products.cart_id WHERE cartItems.cart_id = '$cart_id'";
+
+$user_products = $conn->query($sql);
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -53,28 +93,30 @@
        - checkout section
       -->
       <section class="checkout">
-        
+      <?php
+            while($row = mysqli_fetch_assoc($user_products)){
+                
+        ?>
         <div class="ibox-content">
           <div class="table-responsive">
               <table class="table shoping-cart-table">
                   <tbody>
                   <tr>
                       <td width="90">
-                          <div class="cart-product-imitation">
-                          </div>
+                            <img class="cart-product-imitation" src="<?php echo $row["image"]; ?>" alt="">
                       </td>
                       <td class="desc">
                         <h3>
-                            <a href="#" class="text-navy">Desktop publishing software</a>
+                            <a href="#" class="text-navy"><?php echo $row["product_name"]; ?></a>
                         </h3>
 
-                        <div class="m-t-sm">300 AED</div>
+                        <div class="m-t-sm"><?php echo $row["price"]; ?> AED</div>
                         <div class="m-t-sm">
                           <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
                       </div>
                     </td>
                       <td width="80">
-                        <p>quantity:</p>
+                        <p>quantity: <?php echo $row["quantity"]; ?></p>
                         <input type="text" class="form-control" placeholder="1">
                     </td>
                   </tr>
@@ -83,7 +125,10 @@
           </div>
 
       </div>
-
+      <?php
+            }
+                
+        ?>
       </section>
 
 
