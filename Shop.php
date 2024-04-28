@@ -12,19 +12,35 @@
 <body>
 
 <?php
-    $servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
-    $username = "Etech321";
-    $db_password = "3DNFCBLhrdREVn4VIx4V"; 
-    $dbname = "myDB";
 
-    $conn = new mysqli($servername, $username, $db_password, $dbname);
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
 
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+$conn = new mysqli($servername, $username, $db_password, $dbname);
 
-    $sql = "SELECT * FROM products";
-    $all_product = $conn->query($sql);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+$user_id = $_GET['user_id'];
+
+$sql = "SELECT * FROM products";
+$all_product = $conn->query($sql);
+
+
+
+
+
+$sql_cart = "SELECT cart_id FROM shoppingCart WHERE user_id = '$user_id'";
+$result_cart = $conn->query($sql_cart);
+if ($result_cart->num_rows > 0) {
+    $row_cart = $result_cart->fetch_assoc();
+    $cart_id = $row_cart['cart_id'];
+} else {
+    echo "Error creating cart: " . $conn->error;
+}
 ?>
 
 <section id="header">
@@ -70,7 +86,7 @@
                 </div>
                 <h4><b>$<?php echo $row["price"]; ?></b></h4>
             </div>
-            <button class="add" data-id="<?php echo $row["product_id"];  ?>">Add to cart</button>
+            <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>,<?php echo $cart_id; ?>)">Add to cart</button>
         </div>
         <?php
             }
@@ -84,6 +100,27 @@
     <a href="#"><i class="fas fa-arrow-right"></i></a>
 </section>
 
-<script src="script.js"></script>
+
+<script>
+    // Function to handle adding product to cart
+    function addToCart(product_id,cart_id) {
+        alert(cart_id);
+
+        
+        // AJAX request to add product to cart
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "add_to_cart.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                // Handle response
+                console.log(xhr.responseText);
+            }
+        };
+        xhr.send("cart_id=" + cart_id + "&product_id=" + product_id);
+    }
+</script>
 </body>
+
 </html>
+
