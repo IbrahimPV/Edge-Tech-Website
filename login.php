@@ -34,7 +34,7 @@ if ($result->num_rows == 1) {
     exit();
 } else {
  
-    header("Location: index.html?error=1");
+    header("Location: index.html");
     exit();
 }
 

@@ -59,11 +59,11 @@ if ($result_cart->num_rows > 0) {
 
 <section id="page-header">
     <div class="categ">
-        <button style="cursor: pointer;">Computers & Laptops</button>
-        <button style="cursor: pointer;">Mobile Phones & Tablets</button>
-        <button style="cursor: pointer;">Electronics & Gadgets</button>
-        <button style="cursor: pointer;">Networking & Internet</button>
-        <button style="cursor: pointer;">Components & Accessories</button>
+        <button style="cursor: pointer;">Mouses</button>
+        <button style="cursor: pointer;">Keyboards</button>
+        <button style="cursor: pointer;">Headphones</button>
+        <button style="cursor: pointer;">Microphones</button>
+        <button style="cursor: pointer;">Monitors</button>
     </div>
 </section>
 
@@ -84,7 +84,7 @@ if ($result_cart->num_rows > 0) {
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
                 </div>
-                <h4><b>$<?php echo $row["price"]; ?></b></h4>
+                <h4><b><?php echo $row["price"]; ?> AED</b></h4>
             </div>
             <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>, <?php echo $cart_id; ?>)">Add to cart</button>
         </div>
