@@ -1002,5 +1002,63 @@ body{
   cursor: pointer;
 }
 
+
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Style for table header */
+thead {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 15px; /* increased padding for better spacing */
+  text-align: left;
+  font-size: 16px; /* increased font size */
+}
+
+/* Alternate row colors for better readability */
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+  background-color: #ddd;
+}
+
+/* Style for the table header cells */
+th {
+  background-color: #c8a28a;
+  color: white;
+}
+
+/* Style for the "Your Orders" heading */
+#orders h2 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+
+
+#navbar li {
+  float: left;
+}
+
+#navbar li a {
+  display: block;
+  color: #c8a28a;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+
+
 /*database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com*/
 /*3DNFCBLhrdREVn4VIx4V*/

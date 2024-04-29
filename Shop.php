@@ -51,7 +51,7 @@ if ($result_cart->num_rows > 0) {
             <li><a href="structer.php">Home</a></li>
             <li><a class="active" href="Shop.php">Shop</a></li>
             <li><a href="Account.html">Account</a></li>
-            <li><a href="Order.html">Orders</a></li>
+            <li><a href="order.php">Orders</a></li>
             <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
         </ul>
     </div>
