@@ -31,7 +31,7 @@ if ($result_cart->num_rows > 0) {
 
 
 
-$sql = "SELECT * FROM cartItems INNER JOIN products ON cartItems.cart_id = products.cart_id WHERE cartItems.cart_id = '$cart_id'";
+$sql = "SELECT * FROM cartItems INNER JOIN products ON cartItems.product_id = products.product_id WHERE cartItems.cart_id = '$cart_id'";
 
 $user_products = $conn->query($sql);
 ?>
