@@ -10,13 +10,21 @@ $conn = new mysqli($servername, $username, $db_password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
+$cat = $_POST['cat_title'];
+
+$sql_insert = "INSERT INTO categories (category_title)  VALUES ('$cat')";
+if ($conn->query($sql_insert) === TRUE) {
+    echo "Product added to cart successfully.";
+} else {
+    echo "Error adding product to cart: " . $conn->error;
+}
 ?>
 
 
-<form action="" method="post" class="mb-2">
+<form action="insert_categories.php" method="post" class="mb-2">
 <div class="input-group w-90 mb-2">
 
-  <input type="text" class="form-control" name="cat_title" placeholder="Insert Category" aria-label="Categories" aria-describedby="addon-wrapping" style="margin-top: 100px;">
+  <input type="text" class="form-control" id="cat_title" name="cat_title" placeholder="Insert Category" aria-label="Categories" aria-describedby="addon-wrapping" style="margin-top: 100px;">
 </div>
 
 <div class="input-group w-10 mb-2">
