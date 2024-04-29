@@ -7,9 +7,9 @@ $dbname = "myDB";
 $conn = new mysqli($servername, $username, $db_password, $dbname);
 
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+
+
+
 $cat = $_POST['cat_title'];
 
 $sql_insert = "INSERT INTO categories (category_title)  VALUES ('$cat')";
@@ -29,7 +29,7 @@ if ($conn->query($sql_insert) === TRUE) {
 
 <div class="input-group w-10 mb-2">
 
-<button class="btn btn-primary" type="submit">Submit</button>
+<input type="submit" class="border-0 p-2 my-3" id="cat_title" name="insert_cat" value="Insert Categories">
 
 </div>
 
