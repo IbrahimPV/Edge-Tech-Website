@@ -32,7 +32,6 @@ if ($result_cart->num_rows > 0) {
 
 
 $sql = "SELECT * FROM cartItems INNER JOIN products ON cartItems.product_id = products.product_id WHERE cartItems.cart_id = '$cart_id'";
-
 $user_products = $conn->query($sql);
 ?>
 
@@ -242,6 +241,7 @@ $user_products = $conn->query($sql);
             </div>
 
           </div>
+          
 
           <div class="amount">
 
@@ -260,6 +260,8 @@ $user_products = $conn->query($sql);
             <div class="total">
               <span>Total</span> <span>AED <span id="total">4838</span></span>
             </div>
+            
+            <button onclick="window.location.href='checkout.php?user_id=<?php echo $user_id; ?>'">Checkout</button>
 
           </div>
 

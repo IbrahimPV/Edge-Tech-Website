@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 }
 $user_id = $_GET['user_id'];
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE category = 'monitor'";
 $all_product = $conn->query($sql);
 
 
@@ -60,10 +60,10 @@ if ($result_cart->num_rows > 0) {
 
 <section id="page-header">
     <div class="categ">
-        <button onclick="window.location.href='mouses.php?user_id=<?php echo $user_id; ?>'>Mouses</button>
-        <button onclick="window.location.href='keyboards.php?user_id=<?php echo $user_id; ?>'>Keyboards</button>
-        <button onclick="window.location.href='headphones.php?user_id=<?php echo $user_id; ?>'>Headphones</button>
-        <button onclick="window.location.href='microphones.php?user_id=<?php echo $user_id; ?>'>Microphones</button>
+        <button onclick="window.location.href='mouses.php?user_id=<?php echo $user_id; ?>'style="cursor: pointer;">Mouses</button>
+        <button onclick="window.location.href='keyboards.php?user_id=<?php echo $user_id; ?>'style="cursor: pointer;">Keyboards</button>
+        <button onclick="window.location.href='headphones.php?user_id=<?php echo $user_id; ?>'style="cursor: pointer;">Headphones</button>
+        <button onclick="window.location.href='microphones.php?user_id=<?php echo $user_id; ?>'style="cursor: pointer;">Microphones</button>
         <button onclick="window.location.href='monitors.php?user_id=<?php echo $user_id; ?>'style="cursor: pointer;">Monitors</button>
     </div>
 </section>
