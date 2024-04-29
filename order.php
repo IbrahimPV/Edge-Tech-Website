@@ -48,5 +48,5 @@ while($row = mysqli_fetch_assoc($cart_products)){
 
 echo "Order successful!";
 sleep(2);
-header("Location: structer.php");
+header("Location: home.php");
 ?>
