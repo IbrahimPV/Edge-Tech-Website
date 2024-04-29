@@ -520,111 +520,60 @@ input.bar::placeholder {
    * checkout section style 
    */
   
-  .checkout {
-    width: 70%;
-    padding: 40px var(--px);
-    background: var(--white);
-    border-right: 1px solid var(--gainsboro);
-  }
-  
-  .section-heading {
-    color: var(--onyx);
-    margin-bottom: 30px;
-    font-size: var(--fs-24);
-    font-weight: var(--fw-5);
-  }
-  
-  .payment-form { margin-bottom: 40px; }
-  
-  .payment-method {
-    display:     flex;
-    align-items: center;
-    gap: 30px;
-    margin-bottom: 40px;
-  }
-  
-  .payment-method .method {
-    border: 1px solid var(--quick-silver);
-    border-radius: var(--radius);
-    width: 50%;
-    display:     flex;
-    align-items: center;
-    padding: 15px 30px;
-    gap: 20px;
-    cursor: pointer;
-  }
-  
-  .payment-method .selected { border-color: var(--azure); }
-  
-  .payment-method .method ion-icon { font-size: 20px; }
-  
-  .payment-method .method .checkmark {
-    margin-left: auto;
-    color: var(--quick-silver);
-  }
-  
-  .payment-method .method .fill { color: var(--azure); }
-  
-  .label-default {
-    padding-left: 10px;
-    margin-bottom: 5px;
-    font-size: var(--fs-14);
-    color: var(--spanish-gray);
-  }
-  
-  .input-default {
-    background: var(--platinum);
-    border-radius: var(--radius);
-    color: var(--davys-gray);
-  }
-  
-  .payment-form input {
-    padding: 10px 15px;
-    font-size: var(--fs-18);
-    font-weight: var(--fw-5);
-  }
-  
-  .cardholder-name,
-  .card-number { margin-bottom: 20px; }
-  
-  .card-number input,
-  .cvv input { letter-spacing: 3px; }
-  
-  .input-flex {
-    display:     flex;
-    align-items: center;
-    gap: 30px;
-  }
-  
-  .input-flex .expire-date,
-  .input-flex .cvv { width: 50%; }
-  
-  .expire-date .input-flex {
-    color: var(--spanish-gray);
-    gap: 13px;
-  }
-  
-  .expire-date .input-flex input { text-align: center; }
-  
-  .btn { border-radius: var(--radius); }
-  
-  .btn:active { transform: scale(0.99); }
-  
-  .btn:focus {
-    color: var(--white);
-    background: var(--azure);
-    outline: 2px solid var(--azure);
-    outline-offset: 2px;
-  }
-  
-  .btn-primary {
-    background: var(--azure);
-    font-weight: var(--fw-5);
-    color: var(--white);
-    padding: 13px 45px;
-  }
-  
-  .btn-primary b { margin-right: 10px; }
+.text-navy {
+    color: #1ab394;
+}
+
+.checkout {
+    width: 100%;
+    border-right: none;
+}
+
+.order {
+    display: flex;
+    justify-content: space-between;
+    
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.order-item {
+    display: flex;
+}
+
+.order-image {
+    margin-right: 20px;
+}
+
+.order-details {
+    flex-grow: 1;
+}
+
+.order-quantity {
+    width: 100px; /* Adjust as needed */
+}
+
+input.form-control {
+    width: 100%;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+}
+
+#navbar li {
+    float: left;
+}
+
+#navbar li a {
+    display: block;
+    color: #c8a28a;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
   
   
   /**
