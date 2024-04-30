@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 $servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
@@ -8,91 +7,105 @@ $dbname = "myDB";
 
 $conn = new mysqli($servername, $username, $db_password, $dbname);
 
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 $user_id = $_GET['user_id'];
 
-$sql_cart = "SELECT cart_id FROM shoppingCart WHERE user_id = '$user_id'";
-$result_cart = $conn->query($sql_cart);
+$sql_orders = "SELECT * FROM orders where user_id = $user_id";
+$all_orders = $conn->query($sql_orders);
 
-if ($result_cart->num_rows > 0) {
-    $row_cart = $result_cart->fetch_assoc();
-    $cart_id = $row_cart['cart_id'];
-} else {
-    echo "Error" . $conn->error;
-}
 
-$total_price = $_GET['total_price'];
+$num_items = 0;
 
-$sql_order = "INSERT INTO orders (user_id, order_status, order_total) VALUES ('$user_id','Processing',$total_price)";
-$conn->query($sql_order);
-$order_id = $conn->insert_id;
-
-$sql_items = "SELECT * FROM cartItems INNER JOIN products ON cartItems.product_id = products.product_id WHERE cartItems.cart_id = '$cart_id'";
-$cart_products = $conn->query($sql_items);
 
 ?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Order Confirmation</title>
-<style>
-    .order-container {
-        border: 1px solid #ccc;
-        margin-bottom: 20px;
-        padding: 10px;
-    }
-    .product-container {
-        border: 1px solid #ccc;
-        margin-top: 10px;
-        padding: 10px;
-    }
-    .product-row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 0;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Orders</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Custom styles here */
+    </style>
 </head>
 <body>
-
-<div class="order-container">
-    <h2>Order Summary</h2>
-    <div>Total Price: $<?php echo $total_price; ?></div>
-</div>
-
-<div class="order-container">
-    <h2>Products</h2>
-    <?php
-    while($row = mysqli_fetch_assoc($cart_products)){
+    <div class="container mt-4">
+        <h2 class="mb-4">View Orders</h2>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                <?php
+            while($row = mysqli_fetch_assoc($all_orders)){
+                $sql_order_items = "SELECT * FROM orderItems INNER JOIN products ON orderItems.product_id = products.product_id WHERE orderItems.order_id = " . $row["order_id"];
+                $order_items = $conn->query($sql_order_items);
+                
         ?>
-        <div class="product-container">
-            <div class="product-row">
-                <div><?php echo $row['product_name']; ?></div>
-                <div>Quantity: <?php echo $row['quantity']; ?></div>
-                <div>Price: $<?php echo $row['price']; ?></div>
+                    <div class="card-body">
+                        <h5 class="card-title">Order Details</h5>
+                        <div class="table-responsive">
+                        <?php
+            while($row2 = mysqli_fetch_assoc($order_items)){
+              $num_items += 1*$row2['quantity']; 
+              
+
+                
+        ?>
+        <div class="ibox-content">
+          <div class="table-responsive">
+              <table class="table shoping-cart-table">
+                  <tbody>
+                  <tr>
+                      <td width="90">
+                            <img class="cart-product-imitation" src="<?php echo $row2["image"]; ?>" alt="">
+                      </td>
+                      <td class="desc">
+                        <h3>
+                            <a href="#" class="text-navy"><?php echo $row2["product_name"]; ?></a>
+                        </h3>
+
+                        <div class="m-t-sm"><?php echo $row2["price"]; ?> AED</div>
+                        <div class="m-t-sm">
+                          <form method="post" action="removeItem.php?user_id=<?php echo $user_id; ?>">
+                            <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
+
+                          </form>
+                      </div>
+                    </td>
+                      <td width="80">
+                        <p>quantity: <?php echo $row2["quantity"]; ?></p>
+                        <input type="text" class="form-control" placeholder="1">
+                    </td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+
+      </div>
+      <?php
+            }
+                
+        ?>
+                            
+
+                            
+                        </div>
+                    </div>
+                    <?php
+            }
+                
+        ?>
+                </div>
             </div>
         </div>
-        <?php
-    }
-    ?>
-</div>
-
+    </div>
 </body>
 </html>
-
-<?php
-// Clear the cart after order is processed
-$sql_clear_cart = "DELETE FROM cartItems WHERE cart_id='$cart_id'";
-$conn->query($sql_clear_cart);
-
-echo "Order was successful";
-sleep(2);
-header("Location: home.php");
-?>

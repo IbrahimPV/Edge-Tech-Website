@@ -121,7 +121,27 @@ if ($result_cart->num_rows > 0) {
         };
         xhr.send("cart_id=" + cart_id + "&product_id=" + product_id);
     }
+
 </script>
+<script>
+function active(){
+    var searchbar = document.getElementById('searchbar');
+
+    if(searchbar.value == 'search...'){
+        searchbar.value = ''
+        searchbar.placeholder = ' '
+    }
+  }
+  function inactive(){
+    var searchbar = document.getElementById('searchbar');
+
+    if(searchbar.value == ''){
+        searchbar.value = 'search...'
+        searchbar.placeholder = 'search...'
+    }
+  }
+</script>
+
 </body>
 
 </html>

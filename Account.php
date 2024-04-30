@@ -101,11 +101,11 @@ $user = $userDetails->fetch_assoc();
 
         <div>
             <ul id="navbar">
-                <li><a href="home.php">Home</a></li>
-                <li><a href="Shop.php">Shop</a></li>
-                <li><a class="active" href="Account.php">Account</a></li>
-                <li><a href="Orders.php">Orders</a></li>
-                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
+            <li><a class="active" href="home.php?user_id=<?php echo $user_id; ?>">Home</a></li>
+            <li><a href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></li>
+            <li><a href="Account.php?user_id=<?php echo $user_id; ?>">Account</a></li>
+            <li><a href="Orders.php?user_id=<?php echo $user_id; ?>">Orders</a></li>
+            <li><a href="cart.php?user_id=<?php echo $user_id; ?>"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </section>
@@ -140,25 +140,27 @@ $user = $userDetails->fetch_assoc();
 <div class="form-group">
 <form action="editAccount.php?user_id=<?php echo $user_id; ?>" method="post">
 <label for="fullName">Full Name</label>
-<input type="text" value="<?php echo $user["name"]; ?>" class="form-control" id="fullName" placeholder="Enter full name">
+<input type="text" value="<?php echo $user["name"]; ?>" class="form-control" id="name" name="name" placeholder="Enter full name">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
-<label for="eMail">Email</label>
-<input type="email" value="<?php echo $user["email"]; ?>" class="form-control" id="email" placeholder="Enter email ID">
+<label for="email">Email</label>
+<input type="text" value="<?php echo $user["email"]; ?>" class="form-control" id="email" name="email" placeholder="Enter email ID">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
 <label for="phone">Phone</label>
-<input type="text" value="<?php echo $user["phonenumber"]; ?>" class="form-control" id="phone" placeholder="Enter phone number">
+<input type="text" value="<?php echo $user["phonenumber"]; ?>" class="form-control" id="phone" name="phone"placeholder="Enter phone number">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
 <label for="website">Password</label>
-<input type="url" value="<?php echo $user["password"]; ?>" class="form-control" id="Password" placeholder="Enter Password">
+<input type="hidden" name="user_id" value="<?php echo $user_id; ?>">
+
+<input type="text" value="<?php echo $user["password"]; ?>" class="form-control" name="password" id="Password" placeholder="Enter Password">
 </div>
 </div>
 </div>
@@ -167,7 +169,8 @@ $user = $userDetails->fetch_assoc();
 <div class="text-right">
 <button  id="submit" name="submit" class="btn btn-primary">Update</button>
 </form>
-<button href="home.php" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
+<a href="home.php?user_id=<?php echo $user_id; ?>" class="btn btn-secondary">Cancel</a>
+
 </div>
 </div>
 </div>
