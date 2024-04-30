@@ -1,3 +1,27 @@
+
+<?php
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $db_password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$user_id = $_GET['user_id'];
+
+
+$sql = "SELECT * FROM users where user_id = $user_id";
+$userDetails = $conn->query($sql);
+$user = $userDetails->fetch_assoc();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,11 +101,11 @@
 
         <div>
             <ul id="navbar">
-                <li><a href="structer.html">Home</a></li>
-                <li><a href="Shop.html">Shop</a></li>
-                <li><a class="active" href="A.html">Account</a></li>
-                <li><a href="Orders.html">Orders</a></li>
-                <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="home.php">Home</a></li>
+                <li><a href="Shop.php">Shop</a></li>
+                <li><a class="active" href="Account.php">Account</a></li>
+                <li><a href="Orders.php">Orders</a></li>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
         </div>
     </section>
@@ -114,34 +138,36 @@
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
+<form action="editAccount.php?user_id=<?php echo $user_id; ?>" method="post">
 <label for="fullName">Full Name</label>
-<input type="text" class="form-control" id="fullName" placeholder="Enter full name">
+<input type="text" value="<?php echo $user["name"]; ?>" class="form-control" id="fullName" placeholder="Enter full name">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
 <label for="eMail">Email</label>
-<input type="email" class="form-control" id="eMail" placeholder="Enter email ID">
+<input type="email" value="<?php echo $user["email"]; ?>" class="form-control" id="email" placeholder="Enter email ID">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
 <label for="phone">Phone</label>
-<input type="text" class="form-control" id="phone" placeholder="Enter phone number">
+<input type="text" value="<?php echo $user["phonenumber"]; ?>" class="form-control" id="phone" placeholder="Enter phone number">
 </div>
 </div>
 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
 <div class="form-group">
 <label for="website">Password</label>
-<input type="url" class="form-control" id="Password" placeholder="Enter Password">
+<input type="url" value="<?php echo $user["password"]; ?>" class="form-control" id="Password" placeholder="Enter Password">
 </div>
 </div>
 </div>
 <div class="row gutters">
 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 <div class="text-right">
-<button type="button" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
-<button type="button" id="submit" name="submit" class="btn btn-primary">Update</button>
+<button  id="submit" name="submit" class="btn btn-primary">Update</button>
+</form>
+<button href="home.php" id="submit" name="submit" class="btn btn-secondary">Cancel</button>
 </div>
 </div>
 </div>

@@ -22,10 +22,10 @@ if ($result_cart->num_rows > 0) {
 } else {
     echo "Error" . $conn->error;
 }
-//$total = $_GET['total'];
+$total_price = $_GET['total_price'];
 
 
-$sql_order = "INSERT INTO orders (user_id, order_status, order_total) VALUES ('$user_id','processing',1)";
+$sql_order = "INSERT INTO orders (user_id, order_status, order_total) VALUES ('$user_id','Processing',$total_price)";
 $conn->query($sql_order);
 $order_id = $conn->insert_id;
 
@@ -46,7 +46,7 @@ while($row = mysqli_fetch_assoc($cart_products)){
 
 }
 
-echo "Order successful!";
+echo "Order was successful";
 sleep(2);
 header("Location: home.php");
 ?>

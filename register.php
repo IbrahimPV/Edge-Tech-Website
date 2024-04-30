@@ -1,5 +1,21 @@
 <?php
-include 'db_connection.php';
+$name = $_POST['name'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+$phonenumber = $_POST['phonenumber'];
+$address = $_POST['address'];
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $db_password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
 $isRecordCreated = false;
 
@@ -17,9 +33,9 @@ while (!$isRecordCreated) {
         break; 
     } else {
 
-        $sql_insert = "INSERT INTO users (name, email, password, phonenumber) VALUES (?, ?, ?, ?)";
+        $sql_insert = "INSERT INTO users (name, email, password, phonenumber, address) VALUES (?, ?, ?, ?, ?)";
         $stmt_insert = $conn->prepare($sql_insert);
-        $stmt_insert->bind_param("ssss", $name, $email, $password, $phonenumber);
+        $stmt_insert->bind_param("sssss", $name, $email, $password, $phonenumber, $address);
 
         if ($stmt_insert->execute()) {
             $isRecordCreated = true;

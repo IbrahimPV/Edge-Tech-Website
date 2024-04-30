@@ -41,6 +41,7 @@ if ($result_cart->num_rows > 0) {
 } else {
     echo "Error creating cart: " . $conn->error;
 }
+
 ?>
 
 <section id="header">
@@ -48,7 +49,7 @@ if ($result_cart->num_rows > 0) {
     <input class="bar" placeholder="Search?">
     <div>
         <ul id="navbar">
-
+            
             <li><a class="active" href="home.php?user_id=<?php echo $user_id; ?>">Home</a></li>
             <li><a href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></li>
             <li><a href="Account.php?user_id=<?php echo $user_id; ?>">Account</a></li>

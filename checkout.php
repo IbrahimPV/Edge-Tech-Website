@@ -13,6 +13,7 @@ if ($conn->connect_error) {
 }
 
 $user_id = $_GET['user_id'];
+$total_price = $_GET['total_price'];
 
 ?>
 <!DOCTYPE html>
@@ -130,7 +131,7 @@ $user_id = $_GET['user_id'];
 
             </div>
             <button class="btn btn-primary">
-          <b>Pay</b> $ <span id="payAmount">2.15</span>
+          <b>Pay</b> $ <span id="payAmount"><?php echo $total_price; ?></span>
         </button>
 
           </form>
@@ -147,9 +148,9 @@ $user_id = $_GET['user_id'];
 
         <div class="cart-item-box">
 
-          <h2 class="section-heading">Order Summery</h2>
+          <h2 class="section-heading">Order Summary</h2>
 
-          <div class="product-card">
+          <!-- <div class="product-card">
 
             <div class="card">
 
@@ -231,7 +232,7 @@ $user_id = $_GET['user_id'];
 
             </div>
 
-          </div>
+          </div> -->
 
         </div>
 
@@ -254,19 +255,19 @@ $user_id = $_GET['user_id'];
           <div class="amount">
 
             <div class="subtotal">
-              <span>Subtotal</span> <span>AED <span id="subtotal">4788</span></span>
+              <span>Subtotal</span> <span>AED <span id="subtotal"><?php echo ($total_price-10); ?></span></span>
             </div>
 
             <div class="tax">
-              <span>Tax</span> <span>AED <span id="tax">50</span></span>
+              <span>Tax</span> <span>AED <span id="tax">0</span></span>
             </div>
 
             <div class="shipping">
-              <span>Shipping</span> <span>AED <span id="shipping">0.00</span></span>
+              <span>Shipping</span> <span>AED <span id="shipping">10</span></span>
             </div>
 
             <div class="total">
-              <span>Total</span> <span>AED <span id="total">4838</span></span>
+            <span>Total</span> <span>AED <span id="total"><?php echo $total_price; ?></span></span>
             </div>
 
           </div>
