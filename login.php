@@ -34,7 +34,7 @@ if ($result->num_rows == 1) {
     exit();
 } else {
  
-    header("Location: index.html");
+    header("Location: adminPanel.php");
     exit();
 }
 
