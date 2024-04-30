@@ -138,24 +138,6 @@ $all_product = $conn->query($sql);
     }
 
 </script>
-<script type="text/javascript">
-function active(){
-    var searchbar = document.getElementById('searchbar');
-
-    if(searchbar.value == 'search...'){
-        searchbar.value = ''
-        searchbar.placeholder = ' '
-    }
-  }
-  function inactive(){
-    var searchbar = document.getElementById('searchbar');
-
-    if(searchbar.value == ''){
-        searchbar.value = 'search...'
-        searchbar.placeholder = 'search...'
-    }
-  }
-</script>
 
 </body>
 
