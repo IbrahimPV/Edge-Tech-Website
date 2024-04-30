@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 }
 $user_id = $_GET['user_id'];
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE category = 'keyboard'";
 $all_product = $conn->query($sql);
 
 
@@ -91,6 +91,7 @@ if ($result_cart->num_rows > 0) {
             <button class="add" onClick="addToCart(<?php echo $row["product_id"]; ?>, <?php echo $cart_id; ?>)">Add to cart</button>
         </div>
         <?php
+        
             }
         ?>
     </div>

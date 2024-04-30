@@ -1,3 +1,21 @@
+<?php
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $db_password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$user_id = $_GET['user_id'];
+$total_price = $_GET['total_price'];
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,10 +52,10 @@
 
       <div>
           <ul id="navbar">
-              <li><a href="structer.php">Home</a></li>
-              <li><a href="Shop.php">Shop</a></li>
+              <li><a href="structer.html">Home</a></li>
+              <li><a href="Shop.html">Shop</a></li>
               <li><a href="Account.html">Account</a></li>
-              <li><a href="order.php">Orders</a></li>
+              <li><a href="Order.html">Orders</a></li>
               <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
           </ul>
       </div>
@@ -53,35 +71,72 @@
        - checkout section
       -->
       <section class="checkout">
-        
-        <div class="ibox-content">
-          <div class="table-responsive">
-              <table class="table shoping-cart-table">
-                  <tbody>
-                  <tr>
-                      <td width="90">
-                          <div class="cart-product-imitation">
-                          </div>
-                      </td>
-                      <td class="desc">
-                        <h3>
-                            <a href="#" class="text-navy">Desktop publishing software</a>
-                        </h3>
 
-                        <div class="m-t-sm">300 AED</div>
-                        <div class="m-t-sm">
-                          <a href="#" class="text-muted"><i class="fa fa-trash"></i> Remove item</a>
-                      </div>
-                    </td>
-                      <td width="80">
-                        <p>quantity:</p>
-                        <input type="text" class="form-control" placeholder="1">
-                    </td>
-                  </tr>
-                  </tbody>
-              </table>
+        <h3 class="section-heading">Payment Details</h2>
+
+        <div class="payment-form">
+
+          <div class="payment-method">
+
+            <button class="method selected">
+              <ion-icon name="card"></ion-icon>
+
+              <span>Credit Card</span>
+
+              <ion-icon class="checkmark fill" name="checkmark-circle"></ion-icon>
+            </button>
+
+            <button class="method">
+              <ion-icon name="logo-paypal"></ion-icon>
+
+              <span>PayPal</span>
+
+              <ion-icon class="checkmark" name="checkmark-circle-outline"></ion-icon>
+            </button>
+
           </div>
-      </div>
+
+          <form action="order.php?user_id=<?php echo $user_id; ?>" method="POST">
+
+            <div class="cardholder-name">
+              <label for="cardholder-name" class="label-default">Cardholder name</label>
+              <input type="text" name="cardholder-name" id="cardholder-name" class="input-default">
+            </div>
+
+            <div class="card-number">
+              <label for="card-number" class="label-default">Card number</label>
+              <input type="number" name="card-number" id="card-number" class="input-default">
+            </div>
+
+            <div class="input-flex">
+
+              <div class="expire-date">
+                <label for="expire-date" class="label-default">Expiration date</label>
+
+                <div class="input-flex">
+
+                  <input type="number" name="day" id="expire-date" placeholder="31" min="1" max="31"
+                    class="input-default">
+                  /
+                  <input type="number" name="month" id="expire-date" placeholder="12" min="1" max="12"
+                    class="input-default">
+
+                </div>
+              </div>
+
+              <div class="cvv">
+                <label for="cvv" class="label-default">CVV</label>
+                <input type="number" name="cvv" id="cvv" class="input-default">
+              </div>
+
+            </div>
+            <button class="btn btn-primary">
+          <b>Pay</b> $ <span id="payAmount"><?php echo $total_price; ?></span>
+        </button>
+
+          </form>
+
+        </div>
 
       </section>
 
@@ -93,9 +148,9 @@
 
         <div class="cart-item-box">
 
-          <h2 class="section-heading">Order Summery</h2>
+          <h2 class="section-heading">Order Summary</h2>
 
-          <div class="product-card">
+          <!-- <div class="product-card">
 
             <div class="card">
 
@@ -177,7 +232,7 @@
 
             </div>
 
-          </div>
+          </div> -->
 
         </div>
 
@@ -200,19 +255,19 @@
           <div class="amount">
 
             <div class="subtotal">
-              <span>Subtotal</span> <span>AED <span id="subtotal">4788</span></span>
+              <span>Subtotal</span> <span>AED <span id="subtotal"><?php echo ($total_price-10); ?></span></span>
             </div>
 
             <div class="tax">
-              <span>Tax</span> <span>AED <span id="tax">50</span></span>
+              <span>Tax</span> <span>AED <span id="tax">0</span></span>
             </div>
 
             <div class="shipping">
-              <span>Shipping</span> <span>AED <span id="shipping">0.00</span></span>
+              <span>Shipping</span> <span>AED <span id="shipping">10</span></span>
             </div>
 
             <div class="total">
-              <span>Total</span> <span>AED <span id="total">4838</span></span>
+            <span>Total</span> <span>AED <span id="total"><?php echo $total_price; ?></span></span>
             </div>
 
           </div>

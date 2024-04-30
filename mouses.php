@@ -26,7 +26,7 @@ if ($conn->connect_error) {
 }
 $user_id = $_GET['user_id'];
 
-$sql = "SELECT * FROM products";
+$sql = "SELECT * FROM products WHERE category = 'mouse'";
 $all_product = $conn->query($sql);
 
 

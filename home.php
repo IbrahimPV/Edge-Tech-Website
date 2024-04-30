@@ -33,15 +33,15 @@ $user_id = $_GET['user_id']
 
     <body>
         <section id="header">
-            <a href="#"><img src="img/logo.png" style="width: 500px; "></a>
+            <a href="#"><img src="img/logo.png" style="width: 500px;"></a>
 
             <div>
                 <ul id="navbar">
-                    <li><a class="active" href="structer.html">Home</a></li>
+                    <li><a class="active" href="home.php?user_id=<?php echo $user_id; ?>">Home</a></li>
                     <li><a href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></li>
-                    <li><a href="Account.html">Account</a></li>
-                    <li><a href="order.php">Orders</a></li>
-                    <li><a href="cart.html"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                    <li><a href="Account.php?user_id=<?php echo $user_id; ?>">Account</a></li>
+                    <li><a href="Orders.php?user_id=<?php echo $user_id; ?>">Orders</a></li>
+                    <li><a href="cart.php?user_id=<?php echo $user_id; ?>"><i class="fa-solid fa-cart-shopping"></i></a></li>
                 </ul>
             </div>
         </section>
@@ -50,7 +50,7 @@ $user_id = $_GET['user_id']
             <h2>Where Tomorrow's Tech</h2>
             <h2>Meets Today's Needs</h2>
             <p>Unlock Exclusive Discounts and Offers!</p>
-            <button><a href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></button>
+            <button>Shop Now</button>
         </section>
 
         <section id="feature" class="section-p1" style="padding-bottom: 100px;"></section>
@@ -205,5 +205,3 @@ $user_id = $_GET['user_id']
 
 
 </html>
-
-

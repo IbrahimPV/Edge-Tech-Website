@@ -30,7 +30,7 @@ if ($result->num_rows == 1) {
     $row = $result->fetch_assoc();
     $user_id = $row['user_id'];
 
-    header("Location: structer.php?user_id=$user_id");
+    header("Location: home.php?user_id=$user_id");
     exit();
 } else {
  
