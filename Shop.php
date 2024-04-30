@@ -44,8 +44,8 @@
     <div>
         <ul id="navbar">
 
-            <li><a class="active" href="home.php?user_id=<?php echo $user_id; ?>">Home</a></li>
-            <li><a href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></li>
+            <li><a href="home.php?user_id=<?php echo $user_id; ?>">Home</a></li>
+            <li><a class="active" href="Shop.php?user_id=<?php echo $user_id; ?>">Shop</a></li>
             <li><a href="Account.php?user_id=<?php echo $user_id; ?>">Account</a></li>
             <li><a href="Orders.php?user_id=<?php echo $user_id; ?>">Orders</a></li>
             <li><a href="cart.php?user_id=<?php echo $user_id; ?>"><i class="fa-solid fa-cart-shopping"></i></a></li>
