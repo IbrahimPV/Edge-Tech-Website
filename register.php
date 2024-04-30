@@ -3,7 +3,6 @@ $name = $_POST['name'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 $phonenumber = $_POST['phonenumber'];
-$address = $_POST['address'];
 
 $servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
 $username = "Etech321";
@@ -33,9 +32,9 @@ while (!$isRecordCreated) {
         break; 
     } else {
 
-        $sql_insert = "INSERT INTO users (name, email, password, phonenumber, address) VALUES (?, ?, ?, ?, ?)";
+        $sql_insert = "INSERT INTO users (name, email, password, phonenumber) VALUES (?, ?, ?, ?)";
         $stmt_insert = $conn->prepare($sql_insert);
-        $stmt_insert->bind_param("sssss", $name, $email, $password, $phonenumber, $address);
+        $stmt_insert->bind_param("ssss", $name, $email, $password, $phonenumber);
 
         if ($stmt_insert->execute()) {
             $isRecordCreated = true;
