@@ -1,3 +1,23 @@
+<?php
+
+$servername = "database-1.cn0meig60jdd.me-central-1.rds.amazonaws.com";
+$username = "Etech321";
+$db_password = "3DNFCBLhrdREVn4VIx4V"; 
+$dbname = "myDB";
+
+$conn = new mysqli($servername, $username, $db_password, $dbname);
+
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+$user_id = $_GET['user_id'];
+$sql = "SELECT * FROM products";
+$all_product = $conn->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,7 +58,7 @@
 
 <section id="header">
     <a href="#"><img src="img/logo.png" style="width: 500px;"></a>
-    <form action="search.php" method="GET">
+    <form action="search.php" method="POST">
     <input type="text" id="searchbar" name="search" placeholder="search..." value="search..." maxlength="25" autocomplete="off" onmousedown="active();" onblur="inactive();"><input type="submit" id="searchBtn" value="Go">
 </form>
     <div>
@@ -117,24 +137,6 @@
         xhr.send("cart_id=" + cart_id + "&product_id=" + product_id);
     }
 
-</script>
-<script>
-function active(){
-    var searchbar = document.getElementById('searchbar');
-
-    if(searchbar.value == 'search...'){
-        searchbar.value = ''
-        searchbar.placeholder = ' '
-    }
-  }
-  function inactive(){
-    var searchbar = document.getElementById('searchbar');
-
-    if(searchbar.value == ''){
-        searchbar.value = 'search...'
-        searchbar.placeholder = 'search...'
-    }
-  }
 </script>
 
 </body>
