@@ -60,52 +60,7 @@ $user_id = $_GET['user_id']
 
             <div class="container">
 
-                <div class="pro">
-                    <img src="img/products/Razer DeathAdder Essential Gaming Mouse.jpg" alt="">
-                    <div class="des">
-                        <span>Razer DeathAdder Essential Gaming Mouse</span>
-                        <h5>Razer DeathAddermouse</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>77AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
 
-                <div class="pro">
-                    <img src="o1.jpg">
-                    <div class="des">
-                        <span>Logitech G Pro X Wireless Lightspeed Gaming Headset</span>
-                        <h5>Logitech G pro x</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>530 AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
-
-
-                <div class="pro">
-                    <img src="img/products/HyperX Cloud III Wireless Gaming Headset-Black.jpg" alt="">
-                    <div class="des">
-                        <span>HyperX Cloud III Wireless Gaming Headset-Black</span>
-                        <h5>Hyper X headphones</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>626AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
 
 
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
