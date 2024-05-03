@@ -269,7 +269,7 @@ $total_price = 10;
             <span>Total</span> <span>AED <span id="total"><?php echo $total_price; ?></span></span>
             </div>
             
-            <button onclick="window.location.href='checkout.php?user_id=<?php echo $user_id; ?>&total_price=<?php echo $total_price; ?>'">Checkout</button>
+            <button class="btn btn-primary" onclick="window.location.href='checkout.php?user_id=<?php echo $user_id; ?>&total_price=<?php echo $total_price; ?>'">Checkout</button>
 
           </div>
 

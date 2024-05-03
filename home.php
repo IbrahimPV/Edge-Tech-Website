@@ -50,7 +50,7 @@ $user_id = $_GET['user_id']
             <h2>Where Tomorrow's Tech</h2>
             <h2>Meets Today's Needs</h2>
             <p>Unlock Exclusive Discounts and Offers!</p>
-            <button>Shop Now</button>
+            <button onclick="window.location.href='Shop.php?user_id=<?php echo $user_id; ?>'" >Shop Now</button>
         </section>
 
         <section id="feature" class="section-p1" style="padding-bottom: 100px;"></section>
@@ -63,8 +63,8 @@ $user_id = $_GET['user_id']
                 <div class="pro">
                     <img src="img/products/Razer DeathAdder Essential Gaming Mouse.jpg" alt="">
                     <div class="des">
-                        <span>Razer</span>
-                        <h5>Razer DeathAdder Essential Gamin mouse</h5>
+                        <span>Razer DeathAdder Essential Gaming Mouse</span>
+                        <h5>Razer DeathAddermouse</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -78,7 +78,7 @@ $user_id = $_GET['user_id']
                 <div class="pro">
                     <img src="o1.jpg">
                     <div class="des">
-                        <span>Logitech</span>
+                        <span>Logitech G Pro X Wireless Lightspeed Gaming Headset</span>
                         <h5>Logitech G pro x</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
@@ -89,26 +89,11 @@ $user_id = $_GET['user_id']
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
 
-                <div class="pro">
-                    <img src="img/products/Logitech G Pro Wireless Gaming Mouse with Esports Grade Performance.jpg" alt="">
-                    <div class="des">
-                        <span>Logitech</span>
-                        <h5>Logitech G PRO mouse</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>365AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
 
                 <div class="pro">
                     <img src="img/products/HyperX Cloud III Wireless Gaming Headset-Black.jpg" alt="">
                     <div class="des">
-                        <span>Hyper x</span>
+                        <span>HyperX Cloud III Wireless Gaming Headset-Black</span>
                         <h5>Hyper X headphones</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
