@@ -134,7 +134,7 @@ $total_price = $_GET['total_price'];
 
             </div>
             <button class="btn btn-primary">
-          <b>Pay</b> $ <span id="payAmount"><?php echo $total_price; ?></span>
+          <b>Pay</b>  <span id="payAmount"><?php echo $total_price; ?> AED</span>
         </button>
 
           </form>
