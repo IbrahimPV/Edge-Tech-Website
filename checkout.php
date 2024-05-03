@@ -33,9 +33,7 @@ $total_price = $_GET['total_price'];
   <!--
     - google font link
   -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" >
 </head>
 
 <body>
@@ -96,7 +94,8 @@ $total_price = $_GET['total_price'];
 
           </div>
 
-          <form action="order.php?user_id=<?php echo $user_id; ?>" method="POST">
+          <form action="order.php?user_id=<?php echo $user_id; ?>&total_price=<?php echo $total_price; ?>" method="POST">
+
 
             <div class="cardholder-name">
               <label for="cardholder-name" class="label-default">Cardholder name</label>

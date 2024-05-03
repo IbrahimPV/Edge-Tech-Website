@@ -23,9 +23,9 @@ if ($result_cart->num_rows > 0) {
     echo "Error" . $conn->error;
 }
 $total_price = $_GET['total_price'];
+$date =  date("Y/m/d");
 
-
-$sql_order = "INSERT INTO orders (user_id, order_status, order_total) VALUES ('$user_id','Processing',$total_price)";
+$sql_order = "INSERT INTO orders (user_id, order_status, order_date, order_total) VALUES ('$user_id','Processing', '$date','$total_price')";
 $conn->query($sql_order);
 $order_id = $conn->insert_id;
 
@@ -36,7 +36,7 @@ $cart_products = $conn->query($sql_items);
 
 while($row = mysqli_fetch_assoc($cart_products)){
 
-    $sql_insert_items = "INSERT INTO orderItems (order_id, product_id, quantity) VALUES ('$order_id', $row[product_id], $row[quantity])";
+    $sql_insert_items = "INSERT INTO orderItems (order_id, product_id, quantity) VALUES ('$order_id', '$row[product_id]', '$row[quantity]')";
     $conn->query($sql_insert_items);
     $sql_delete_items = "DELETE FROM cartItems WHERE cart_id='$row[cart_id]'";
     $conn->query($sql_delete_items);
@@ -48,5 +48,7 @@ while($row = mysqli_fetch_assoc($cart_products)){
 
 echo "Order was successful";
 sleep(2);
-header("Location: home.php");
+header("Location: home.php?user_id=$user_id");
 ?>
+
+

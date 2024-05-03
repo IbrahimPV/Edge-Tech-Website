@@ -33,6 +33,7 @@ $num_items = 0;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>View Orders</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
         /* Custom styles here */
     </style>
@@ -50,7 +51,9 @@ $num_items = 0;
                 
         ?>
                     <div class="card-body">
-                        <h5 class="card-title">Order Details</h5>
+                        <h5 class="card-title">Order ID: <?php echo $row["order_id"]; ?></h5>
+                        <h5 class="card-title">Order of date: <?php echo $row["order_date"]; ?></h5>
+                        <h5 class="card-title">Order Total: <?php echo $row["order_total"]; ?></h5>
                         <div class="table-responsive">
                         <?php
             while($row2 = mysqli_fetch_assoc($order_items)){
@@ -74,15 +77,12 @@ $num_items = 0;
 
                         <div class="m-t-sm"><?php echo $row2["price"]; ?> AED</div>
                         <div class="m-t-sm">
-                          <form method="post" action="removeItem.php?user_id=<?php echo $user_id; ?>">
-                            <input type="hidden" name="product_id" value="<?php echo $row['product_id']; ?>">
-
-                          </form>
+  
                       </div>
                     </td>
                       <td width="80">
                         <p>quantity: <?php echo $row2["quantity"]; ?></p>
-                        <input type="text" class="form-control" placeholder="1">
+                    
                     </td>
                   </tr>
                   </tbody>
