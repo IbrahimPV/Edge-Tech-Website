@@ -45,10 +45,12 @@ while($row = mysqli_fetch_assoc($cart_products)){
 
 
 }
+echo "<script>
+alert('Your order has been processed successfully!');
+window.location.href='home.php?user_id=$user_id';
+</script>";
+exit();
 
-echo "Order was successful";
-sleep(2);
-header("Location: home.php?user_id=$user_id");
 ?>
 
 
