@@ -56,66 +56,60 @@ $user_id = $_GET['user_id']
         <section id="feature" class="section-p1" style="padding-bottom: 100px;"></section>
 
         <section id="product1" class="section-p1">
-            <h2>Featured Products</h2>
+            <h2>Recommended Products</h2>
 
             <div class="container">
 
                 <div class="pro">
-                    <img src="img/products/p1.png">
+                    <img src="img/products/Razer DeathAdder Essential Gaming Mouse.jpg" alt="">
                     <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
+                        <span>Razer</span>
+                        <h5>Razer DeathAdder Essential Gamin mouse</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
-                        <h4>9,498AED</h4>
+                        <h4>77AED</h4>
                     </div>
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
 
                 <div class="pro">
-                    <img src="img/products/p1.png">
+                    <img src="o1.jpg">
                     <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
+                        <span>Logitech</span>
+                        <h5>Logitech G pro x</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
-                        <h4>9,498AED</h4>
+                        <h4>530</h4>
                     </div>
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
 
                 <div class="pro">
-                    <img src="img/products/p1.png">
+                    <img src="img/products/Logitech G Pro Wireless Gaming Mouse with Esports Grade Performance.jpg" alt="">
                     <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
+                        <span>Logitech</span>
+                        <h5>Logitech G PRO mouse</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
                         </div>
-                        <h4>9,498AED</h4>
+                        <h4>365AED</h4>
                     </div>
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
 
                 <div class="pro">
-                    <img src="img/products/p1.png">
+                    <img src="img/products/HyperX Cloud III Wireless Gaming Headset-Black.jpg" alt="">
                     <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
+                        <span>Hyper x</span>
+                        <h5>Hyper X headphones</h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
@@ -123,73 +117,12 @@ $user_id = $_GET['user_id']
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>9,498AED</h4>
+                        <h4>626AED</h4>
                     </div>
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
 
-                <div class="pro">
-                    <img src="img/products/p1.png">
-                    <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>9,498AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
-                <div class="pro">
-                    <img src="img/products/p1.png">
-                    <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>9,498AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
-                <div class="pro">
-                    <img src="img/products/p1.png">
-                    <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>9,498AED</h4>
-                    </div>
-                    <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
-                </div>
-                <div class="pro">
-                    <img src="img/products/p1.png">
-                    <div class="des">
-                        <span>IBUYPOWER</span>
-                        <h5>Pro Gaming PC Computer Desktop Element MR 208i Intel i7 11700F 2.5GHz,NVIDIA GeForce RTX 2060 6GB</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>9,498AED</h4>
-                    </div>
+
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
             </div>
