@@ -124,7 +124,7 @@ $total_price = 10;
                     </td>
                       <td width="80">
                         <p>quantity: <?php echo $row["quantity"]; ?></p>
-                        <input type="text" class="form-control" placeholder="1">
+
                     </td>
                   </tr>
                   </tbody>

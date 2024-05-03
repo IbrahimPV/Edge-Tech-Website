@@ -24,9 +24,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $update_sql = "UPDATE users SET name='$name', email='$email', phonenumber='$phone', password='$password' WHERE user_id=$user_id";
     
     if ($conn->query($update_sql) === TRUE) {
-        echo "User details updated successfully.";
+        echo "<script>
+alert('Your person details have been saved');
+window.location.href='home.php?user_id=$user_id';
+</script>";
     } else {
-        echo "Error updating user details: " . $conn->error;
+        echo "<script>
+alert('error');
+window.location.href='home.php?user_id=$user_id';
+</script>";
     }
 }
 
