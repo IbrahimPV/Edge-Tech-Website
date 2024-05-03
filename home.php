@@ -84,7 +84,7 @@ $user_id = $_GET['user_id']
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>530</h4>
+                        <h4>530 AED</h4>
                     </div>
                     <a href="#"><i class="fa-solid fa-cart-shopping cart"></i></i></a>
                 </div>
