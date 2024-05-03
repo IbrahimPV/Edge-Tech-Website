@@ -28,12 +28,16 @@ $total_price = $_GET['total_price'];
   <!--
     - custom css link
   -->
-  <link rel="stylesheet" href="style.css">
+  - custom css link
+  -->
+  <link rel="stylesheet" href="checkout.css">
 
   <!--
     - google font link
   -->
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" >
+  <link
+    href="https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+    rel="stylesheet" />
 </head>
 
 <body>
